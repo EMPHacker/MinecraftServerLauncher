@@ -29,3 +29,5 @@ Minecraft versions are recorgnized by a filename including 'minecraft_server' an
 
 Theme credit to @brianlagunas, many thanks!
 Check it out at: https://www.infragistics.com/community/blogs/blagunas/archive/2013/05/25/free-metro-light-and-dark-themes-for-wpf-and-silverlight-microsoft-controls.aspx
+
+Icon is that of ComputerCraft, by dan200. 
