@@ -3,8 +3,6 @@ An easy graphical launcher for Minecraft servers.
 Usefull for personal servers that you're constantly turning on and off and loading with different worlds and/or versions.
 
 
-
-
 FEATURES:
 
 Keep track of Minecraft server versions and worlds and choose on to run from the dropdown.
@@ -18,15 +16,10 @@ Create a backup of your world before the server launches, very useful if you hap
 As well as a checkbox for NoGUI, there is a field for inputing any sort of Custom Java arguments you desire.
 
 
-
-
 KEY NOTES:
 
 Worlds are recorgnized by the .world folder extension.
-Minecraft versions are recorgnized by the word minecraft in the filename and the .jar. 
-
-
-
+Minecraft versions are recorgnized by a filename including 'minecraft_server' and the .jar extension. 
 
 
 Theme credit to @brianlagunas, many thanks!
