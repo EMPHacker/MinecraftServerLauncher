@@ -1,0 +1,75 @@
+﻿<Window x:Class="theMinecraftServerLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theMinecraftServerLauncher"
+        mc:Ignorable="d"
+        Title="The MinecraftServerLauncher" ResizeMode="NoResize" Width="700" Height="525" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel HorizontalAlignment="Left" Height="20" LastChildFill="False" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="Settings"/>
+                    <MenuItem Header="About"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <StackPanel Margin="20,20,20,20" Grid.Column="0" Grid.Row="1">
+            <StackPanel Margin="0,0,0,20" Orientation="Vertical">
+                <TextBlock Margin="0,0,0,5" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Server Versions" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <ComboBox Name="ServerVersion" HorizontalAlignment="Stretch" IsEditable="True" Text="(select)" VerticalAlignment="Top" Background="Black" BorderBrush="#66FFFFFF"/>
+            </StackPanel>
+            
+            <StackPanel Margin="0,10,0,20" Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left" Text="Current World" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <TextBox Name="CurrentWorld" Text="world.world" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20" IsReadOnly="True" Cursor="Arrow" Background="#66FFFFFF"/>                
+            </StackPanel>
+            
+            <StackPanel Margin="0,10,0,20" Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Worlds" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <ComboBox Name="ServerWorld" HorizontalAlignment="Stretch" IsEditable="True" Text="(select)" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,20,0,20" Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Options" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <CheckBox Name="NoGUIFlag" Content="No GUI" ToolTip="Loads server with or without GUI (-nogui flag)" HorizontalAlignment="Left" Margin="0,5,10,0" Checked="NoGUIFlag_Checked" Unchecked="NoGUIFlag_Unchecked" Foreground="Black"/>
+                <CheckBox Name="MOTDcheck" Content="Random Message of the Day" ToolTip="Pulls random a Message of the Day from the motds.txt file." HorizontalAlignment="Left" Margin="0,5,10,0" Foreground="Black"/>
+                <CheckBox Name="BackupWorld" Content="Backup World" ToolTip="Backs up selected world, format yyyyMMdd-HHmm" HorizontalAlignment="Left" Margin="0,5,10,0" Foreground="Black" />
+                <CheckBox Name="CloseSL" Content="Close ServerLauncher on Stop" ToolTip="Closes the Minecraft ServerLauncher" IsChecked="True" HorizontalAlignment="Left" Margin="0,5,10,0" Foreground="Black" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="20,20,20,20" Grid.Column="1" Grid.Row="1">
+            <StackPanel Margin="0,0,0,20" Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left" Margin="0,0,0,5" TextWrapping="Wrap" Text="Java args" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <TextBox Name="JavaArgsInput" HorizontalAlignment="Stretch" MinHeight="20" MaxHeight="40" VerticalAlignment="Top" TextWrapping="Wrap" TextChanged="JavaArgs_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,20" Orientation="Vertical">
+                <Label Name="RAMLabel" Content="{Binding Value,ElementName=RAMSlider,UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="RAM {0} GB" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" FontSize="16"/>
+                <Slider Name="RAMSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top" Value="2" IsSnapToTickEnabled="True" Maximum="4" Minimum="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" TickFrequency="1" IsDirectionReversed="False" IsMoveToPointEnabled="False" ValueChanged="RAMSlider_ValueChanged"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,20" Orientation="Vertical">
+                <TextBlock HorizontalAlignment="Left" Text="Current MOTD" Margin="0,0,0,5" VerticalAlignment="Top" Foreground="Black" FontSize="14"/>
+                <TextBox Name="CurrentMOTD" Text="A Minecraft Server" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="20"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Margin="20,20,20,20" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom">
+            <Button Name="Exit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Click="Exit_Click"/>
+            <Button Name="LaunchServer" Content="Launch Server"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="120" Click="LaunchServer_Click"/>
+        </Grid>
+    </Grid>
+</Window>
