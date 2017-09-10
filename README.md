@@ -16,6 +16,11 @@ Create a backup of your world before the server launches, very useful if you hap
 As well as a checkbox for NoGUI, there is a field for inputing any sort of Custom Java arguments you desire.
 
 
+INSTALLATION:
+
+This is a standalone executable, simply place the exe in the same folder as your Minecraft server and run it. (NOTE: requires server.properties to be present, else it errors). For random MOTDs the motds.txt file must also be in the directory.
+
+
 KEY NOTES:
 
 Worlds are recorgnized by the .world folder extension.
